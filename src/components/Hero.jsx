@@ -1,4 +1,5 @@
 import { ArrowRight, Play } from 'lucide-react';
+import Spline from '@splinetool/react-spline';
 
 export default function Hero() {
     return (
@@ -38,7 +39,20 @@ export default function Hero() {
                 zIndex: 0
             }} />
 
-            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+            {/* 3D Spline Canvas */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                width: '50%',
+                height: '100%',
+                zIndex: 1,
+                pointerEvents: 'none' // Let clicks pass through to background if necessary
+            }} className="spline-container">
+                <Spline scene="https://prod.spline.design/qEwXY11A2sYq0Y78/scene.splinecode" />
+            </div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                 <div style={{
                     maxWidth: '800px',
                     display: 'flex',
@@ -78,7 +92,7 @@ export default function Hero() {
                         {' '}Today.
                     </h1>
 
-                    <p style={{ fontSize: '1.25rem', marginBottom: '1rem', opacity: 0.8 }}>
+                    <p style={{ fontSize: '1.25rem', marginBottom: '1rem', opacity: 0.8, maxWidth: '500px' }}>
                         Experience the finest selection of tennis equipment, premium stringing services, and expert advice at Arizona's premier pro shop.
                     </p>
 
@@ -105,7 +119,8 @@ export default function Hero() {
                         gap: '2rem',
                         marginTop: '4rem',
                         paddingTop: '2rem',
-                        borderTop: '1px solid rgba(255,255,255,0.1)'
+                        borderTop: '1px solid rgba(255,255,255,0.1)',
+                        maxWidth: '600px'
                     }}>
                         {[
                             { label: 'Years Experience', value: '30+' },
@@ -125,6 +140,16 @@ export default function Hero() {
 
                 </div>
             </div>
+
+            <style>{`
+                @media (max-width: 900px) {
+                    .spline-container {
+                        width: 100% !important;
+                        opacity: 0.3;
+                        pointer-events: none;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
