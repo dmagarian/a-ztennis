@@ -13,7 +13,7 @@ export default function Hero() {
             }}
         >
             {/* Background Effects */}
-            <div style={{
+            <div className="hero-blur" style={{
                 position: 'absolute',
                 top: '-20%',
                 right: '-10%',
@@ -25,7 +25,7 @@ export default function Hero() {
                 borderRadius: 'var(--radius-full)',
                 zIndex: 0
             }} />
-            <div style={{
+            <div className="hero-blur" style={{
                 position: 'absolute',
                 bottom: '-10%',
                 left: '-10%',

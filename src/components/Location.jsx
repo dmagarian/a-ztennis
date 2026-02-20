@@ -122,24 +122,16 @@ export default function Location() {
                         border: '1px solid rgba(255,255,255,0.1)',
                         backgroundColor: 'rgba(255,255,255,0.02)'
                     }}>
-                        {/* Minimal Map UI Simulation */}
-                        <div style={{
-                            width: '100%', height: '100%',
-                            background: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(255,255,255,0.05)\' stroke-width=\'1\' d=\'M50 0 L50 100 M0 50 L100 50\' fill=\'none\'/%3E%3C/svg%3E")'
-                        }}>
-                            <div style={{
-                                position: 'absolute',
-                                top: '50%', left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                textAlign: 'center'
-                            }}>
-                                <a href="https://maps.app.goo.gl/PzXZ6d7HpH3ZqZQY7" target="_blank" rel="noreferrer"
-                                    className="btn btn-primary"
-                                    style={{ padding: '1rem 2rem' }}>
-                                    Get Directions
-                                </a>
-                            </div>
-                        </div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.9080228771457!2d-111.9015091234971!3d33.58172924378036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b75a1377a00f1%3A0xe6759fe5ab120a8!2sA-Z%20Tennis!5e0!3m2!1sen!2sus!4v1709400000000!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0, filter: 'grayscale(0.7) contrast(1.2)' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="A-Z Tennis Location Map"
+                        ></iframe>
                     </div>
 
                 </div>
